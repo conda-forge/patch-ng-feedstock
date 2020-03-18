@@ -1,5 +1,5 @@
 {% set name = "patch-ng" %}
-{% set version = "1.17.2" %}
+{% set version = "1.17.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5150c9e624e45be5d51f0288d20393cdfd8cfa44682b0c76a4a14c0dce6cca0a
+  sha256: 627abc5bd723c8b481e96849b9734b10065426224d4d22cd44137004ac0d4ace
 
 build:
   noarch: python
   number: 0
   entry_points:
     - patch-ng = patch_ng:main
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -32,7 +32,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Library to parse and apply unified diffs'
+  summary: Library to parse and apply unified diffs
 
 extra:
   recipe-maintainers:
