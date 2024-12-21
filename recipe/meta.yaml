@@ -1,5 +1,5 @@
 {% set name = "patch-ng" %}
-{% set version = "1.18.0" %}
+{% set version = "1.18.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: da067628d6d5fd9dc5a55eab37951d46bd95661b7219fab364b711366abcc690
+  sha256: 52fd46ee46f6c8667692682c1fd7134edc65a2d2d084ebec1d295a6087fc0291
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - patch-ng = patch_ng:main
   script: {{ PYTHON }} -m pip install . -vv
